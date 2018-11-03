@@ -38,13 +38,53 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 #### [[⬆]](#toc) <a name='general'>General Questions:</a>
 
 * What did you learn yesterday/this week?
+Birthday Paradox
+printf
+regex
+grep
+
 * Talk about your preferred development/administration environment. (OS, Editor, Browsers, Tools etc.)
+Ubuntu 16.04
+Pycharm
+VScode
+Chrome
+Vim
+Bash
+
 * Tell me about the last major Linux project you finished.
+Nginx
+Gunicorn
+Flask
+
 * Tell me about the biggest mistake you've made in [some recent time period] and how you would do it differently today. What did you learn from this experience?
+Terminated the AWS Instance which erased all my website data.
+I should do backup more often and turn on the terminate protection.
+
 * Why we must choose you?
+Experienced in Python, good at Software dev, interested in Linux and like to solve diffcult bugs.
+
 * What function does DNS play on a network?
+Domain Name Servers (DNS) are the Internet's equivalent of a phone book.
+
 * What is HTTP?
+HTTP means HyperText Transfer Protocol. HTTP is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.
+
 * What is an HTTP proxy and how does it work?
+HTTP functions as a request–response protocol in the client–server computing model. HTTP is an application layer protocol designed within the framework of the Internet protocol suite. Its definition presumes an underlying and reliable/unreliable transport layer: TCP/UDP.
+HTTP resources are identified and located on the network by Uniform Resource Locators (URLs), using the Uniform Resource Identifiers (URI's) schemes http and https. 
+
+how does it work:
+  1) An HTTP client initiates a request by establishing a TCP connection to a particular port on a server (typically port 80, occasionally port 8080)
+  2) An HTTP server listening on that port waits for a client's request message.
+  3) Upon receiving the request, the server sends back a status line, such as "HTTP/1.1 200 OK", and a message of its own.
+  
+  GET, POST, PUT, DELETE, OPTIONS, HEAD, TRACE, CONNECT, PATCH
+  Informational 1XX
+  Successful 2XX
+  Redirection 3XX
+  Client Error 4XX
+  Server Error 5XX
+  
 * Describe briefly how HTTPS works.
 * What is SMTP? Give the basic scenario of how a mail message is delivered via SMTP.
 * What is RAID? What is RAID0, RAID1, RAID5, RAID10?
@@ -55,6 +95,8 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 #### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
 
 * What is the name and the UID of the administrator user?
+root 0
+
 * How to list all files, including hidden ones, in a directory?
 * What is the Unix/Linux command to remove a directory and its contents?
 * Which command will show you free/used memory? Does free memory exist on Linux?
