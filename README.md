@@ -86,10 +86,43 @@ how does it work:
   Server Error 5XX
   
 * Describe briefly how HTTPS works.
+HyperText Transfer Protocol Secure. Using HTTPS, the computers agree on a "code" between them, and then they scramble the messages using that "code" so that no one in between can read them. This keeps your information safe from hackers. HTTPS encrypts all message contents, including the HTTP headers and the request/response data.
+ 
 * What is SMTP? Give the basic scenario of how a mail message is delivered via SMTP.
+Simple Mail Transfer Protocol (SMTP) is an Internet standard for electronic mail (email) transmission
+SMTP is a delivery protocol only. In normal use, mail is "pushed" to a destination mail server. While other protocols, such as the Post Office Protocol (POP) and the Internet Message Access Protocol (IMAP) are specifically designed for use by individual users retrieving messages and managing mail boxes. 
+MAIL
+RCPT
+DATA
+
 * What is RAID? What is RAID0, RAID1, RAID5, RAID10?
-* What is a level 0 backup? What is an incremental backup?
+RAID (Redundant Array of Independent Disks) data storage virtualization technology that combines multiple physical disk drive components into one or more logical units for the purposes of data redundancy, performance improvement, or both.
+
+  1) RAID0: Multiple disks be striped, No Redundancy, Excellent performance. (striping spreads data across more physical drives, multiple disks can access the contents of a file, enabling writes and reads to be completed more quickly)
+
+  2) RAID1: Mirroring, Redundancy, Bad Performance and waste of space
+  
+  3) RAID5: minimum 3 disks, Redundancy(Distributed Parity), Cost effective, Heavy Read, write is slow
+  
+  4) RAID10: minimum 4 disks, Redundancy, Cost a lot
+
+* What is a level 0 backup? What is an incremental backup? 
+Incremental backups are successive copies of the data contain only the portion that has changed since the preceding backup copy was made. It's often desirable as they reduce storage space usage, and are quicker to perform than differential backups.
+
+Incremental backups can be either level 0 or level 1. A level 0 incremental backup, which is the base for subsequent incremental backups, copies all blocks containing data, backing the datafile up into a backup set just as a full backup would.
+
 * Describe the general file system hierarchy of a Linux system.
+/
+/root
+/bin
+/boot
+/dev
+/etc
+/home
+/lib
+/var
+/usr
+/tmp
 
 
 #### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
