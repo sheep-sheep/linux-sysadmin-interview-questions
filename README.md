@@ -129,27 +129,114 @@ Incremental backups can be either level 0 or level 1. A level 0 incremental back
 
 * What is the name and the UID of the administrator user?
 root 0
+$ id root
+uid=0(root) gid=0(root) groups=0(root)
 
 * How to list all files, including hidden ones, in a directory?
+
+ls -a
+alias ll = 'ls -alF'
+
 * What is the Unix/Linux command to remove a directory and its contents?
+
+rm -R [folder path] 
+You can also add -i to make sure you are deleting right files
+
 * Which command will show you free/used memory? Does free memory exist on Linux?
+
+free -m
+free -h
+top (realtime)
+vmstat -s
+
+Free memory as in unused? Very little. Any memory not used by a program is used to cache disk. It will use all the memory to accelarate the speed of process.
+
+This is just a difference in terminology. Both you and Linux agree that memory taken by applications is "used", while memory that isn't used for anything is "free". But how do you count memory that is currently used for something, but can still be made available to applications? You might count that memory as "free" and/or "available". Linux instead counts it as "used", but also "available".
+
+
 * How to search for the string "my konfu is the best" in files of a directory recursively?
+grep -r 'my konfu is the best' [path]
+
 * How to connect to a remote server or what is SSH?
+SSH or Secure Shell is a network communication protocol that enables two computers to communicate. An inherent feature of ssh is that the communication between the two computers is encrypted meaning that it is suitable for use on insecure networks.
+
+ssh remote_username@remote_host
+
+
 * How to get all environment variables and how can you use them?
+export
+printenv
+
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
+```type -a ifconfig```
+the command syntax was entered incorrectly
+the command you are attempting to run is not installed
+the command was deleted, or, worse, the system directory was deleted or modified
+the users $PATH is incomplete, or $PATH has been erroneously set, reset, or cleared – this is the most common reason to see a ‘command not found’ message
+
 * What happens if I type TAB-TAB?
+suggest all posibilities of the command
+TAB will display the files
+
 * What command will show the available disk space on the Unix/Linux system?
+df - report file system disk space usage
+df -h (human readable unit)
+
 * What commands do you know that can be used to check DNS records?
+nslookup
+host [address]
+ping?
+
 * What Unix/Linux commands will alter a files ownership, files permissions?
+chown - command to change file owner and group information.
+chmod - command to change file access permissions such as read, write, and access.
+
 * What does ```chmod +x FILENAME``` do?
+make the file excutable for owner, group and other groups
+
 * What does the permission 0750 on a file mean?
+$ chmod 750 FILENAME
+-rwxr-x--- 1 root root 24 Jan 22 18:02 FILENAME*
+0111 0101 0000
+This permissions means that owner can read\write\execute this file, also members of group can read and execute, other users can do nothing with it.
+
 * What does the permission 0750 on a directory mean?
+This permissions means that owner can read\write\execute(see file list of directory) this directory, also members of group can read and list, other users can do nothing with it.
+
 * How to add a new system user without login permissions?
+
+
 * How to add/remove a group from a user?
+
+
 * What is a bash alias?
+alias is like a shortcur for some commands setup
+
 * How do you set the mail address of the root/a user?
+useradd -r subversion
+per man useradd:
+-r, --system                  create a system account
+They will have the shell /usr/sbin/nologin and have logins disabled
+
 * What does CTRL-c do?
+Control+Z is used for suspending a process by sending it the signal SIGSTOP, which cannot be intercepted by the program. While Control+C is used to kill a process with the signal SIGINT, and can be intercepted by a program so it can clean its self up before exiting, or not exit at all.
+However, if you kill one, you won't see any confirmation other than being dropped back to a shell prompt. When you suspend a process, you can do fancy things with it, too. For instance, running this:
+fg
+With a program suspended will bring it back to the foreground.
+And running the command
+bg
+With a program suspended will allow it to run in the background (the program's output will still go to the TTY, though).
+If you want to kill a suspended program, you don't have to bring it back with fg first, you can simply do the command:
+kill %1
+If you have multiple suspended commands, running
+jobs
+
 * What is in /etc/services?
+UNIX uses the /etc/services file as a small local database. For each service this
+file specifies the service’s well-known port number and notes whether the service is available as a TCP or
+UDP service. The /etc/services file is distributed as part of the UNIX operating system. 
+
+
 * How to redirect STDOUT and STDERR in bash? (> /dev/null 2>&1)
 * What is the difference between UNIX and Linux.
 * What is the difference between Telnet and SSH?
